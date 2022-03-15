@@ -27,3 +27,4 @@ Route::post('/store', [TodosController::class, 'store'])->name('todos.store');
 Route::get('/show/{id}', [TodosController::class, 'show'])->name('todos.show');
 Route::post('/update/{id}', [TodosController::class, 'update'])->name('todos.update');
 Route::post('/delete/{id}', [TodosController::class, 'delete'])->name('todos.delete');
+Route::post('/done/{id}', [TodosController::class, 'done'])->name('todos.done');

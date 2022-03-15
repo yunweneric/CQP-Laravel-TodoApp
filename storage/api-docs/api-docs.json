@@ -1,0 +1,711 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "ACDEMI API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/index": {
+            "get": {
+                "tags": [
+                    "Todo"
+                ],
+                "summary": "Endpoint for creating new Todo",
+                "description": "Endpoint for creating new Todo",
+                "operationId": "",
+                "responses": {
+                    "401": {
+                        "description": "An unknown error has occurred !!! Please try again later",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "boolean",
+                                            "example": "true"
+                                        },
+                                        "status_code": {
+                                            "type": "string",
+                                            "example": "401"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Unauthorized"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Protected page, please log in"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "An unknown error has occurred !!! Please try again later",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "boolean",
+                                            "example": "true"
+                                        },
+                                        "status_code": {
+                                            "type": "string",
+                                            "example": "422"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Unprocessable Entity"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "An unknown error has occurred !!! Please try again later"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "Todo successfully created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "boolean",
+                                            "example": "false"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "success"
+                                        },
+                                        "status_code": {
+                                            "type": "integer",
+                                            "example": "200"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Todo successfully added."
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": "2"
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "example": "Text here"
+                                                },
+                                                "activity": {
+                                                    "type": "string",
+                                                    "example": "description here"
+                                                },
+                                                "dateline": {
+                                                    "type": "string",
+                                                    "example": "2022-03-15T12:05:50.000000Z"
+                                                },
+                                                "updated at": {
+                                                    "type": "string",
+                                                    "example": "2022-03-15T12:05:50.000000Z"
+                                                },
+                                                "created at": {
+                                                    "type": "string",
+                                                    "example": "2022-03-15T12:05:50.000000Z"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/store": {
+            "post": {
+                "tags": [
+                    "Todo"
+                ],
+                "summary": "Endpoint for deleting new Todo",
+                "description": "Endpoint for updating new Todo",
+                "operationId": "auth",
+                "requestBody": {
+                    "description": "Endpoint for updating new Todo",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "name",
+                                    "field",
+                                    "activity",
+                                    "state",
+                                    "dateline"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Cook Food"
+                                    },
+                                    "activity": {
+                                        "type": "string",
+                                        "example": "Ambitioconcilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum."
+                                    },
+                                    "state": {
+                                        "type": "string",
+                                        "example": "1 0r 0"
+                                    },
+                                    "dateline": {
+                                        "type": "string",
+                                        "example": "12/12/2022"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "401": {
+                        "description": "An unknown error has occurred !!! Please try again later",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "boolean",
+                                            "example": "true"
+                                        },
+                                        "status_code": {
+                                            "type": "string",
+                                            "example": "401"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Unauthorized"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Protected page, please log in"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "An unknown error has occurred !!! Please try again later",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "boolean",
+                                            "example": "true"
+                                        },
+                                        "status_code": {
+                                            "type": "string",
+                                            "example": "422"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Unprocessable Entity"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "An unknown error has occurred !!! Please try again later"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "Todo successfully created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "boolean",
+                                            "example": "false"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "success"
+                                        },
+                                        "status_code": {
+                                            "type": "integer",
+                                            "example": "200"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Todo successfully added."
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": "2"
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "example": "Text here"
+                                                },
+                                                "activity": {
+                                                    "type": "string",
+                                                    "example": "description here"
+                                                },
+                                                "dateline": {
+                                                    "type": "string",
+                                                    "example": "2022-03-15T12:05:50.000000Z"
+                                                },
+                                                "updated at": {
+                                                    "type": "string",
+                                                    "example": "2022-03-15T12:05:50.000000Z"
+                                                },
+                                                "created at": {
+                                                    "type": "string",
+                                                    "example": "2022-03-15T12:05:50.000000Z"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/show/id": {
+            "get": {
+                "tags": [
+                    "Todo"
+                ],
+                "summary": "Endpoint for Showing one Todo",
+                "description": "Endpoint for showind one Todo",
+                "operationId": "show",
+                "responses": {
+                    "401": {
+                        "description": "An unknown error has occurred !!! Please try again later",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "boolean",
+                                            "example": "true"
+                                        },
+                                        "status_code": {
+                                            "type": "string",
+                                            "example": "401"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Unauthorized"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Protected page, please log in"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "An unknown error has occurred !!! Please try again later",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "boolean",
+                                            "example": "true"
+                                        },
+                                        "status_code": {
+                                            "type": "string",
+                                            "example": "422"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Unprocessable Entity"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "An unknown error has occurred !!! Please try again later"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "Todo successfully created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "boolean",
+                                            "example": "false"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "success"
+                                        },
+                                        "status_code": {
+                                            "type": "integer",
+                                            "example": "200"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Todo successfully added."
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": "2"
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "example": "Text here"
+                                                },
+                                                "activity": {
+                                                    "type": "string",
+                                                    "example": "description here"
+                                                },
+                                                "dateline": {
+                                                    "type": "string",
+                                                    "example": "2022-03-15T12:05:50.000000Z"
+                                                },
+                                                "updated at": {
+                                                    "type": "string",
+                                                    "example": "2022-03-15T12:05:50.000000Z"
+                                                },
+                                                "created at": {
+                                                    "type": "string",
+                                                    "example": "2022-03-15T12:05:50.000000Z"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/update/id": {
+            "put": {
+                "tags": [
+                    "Todo"
+                ],
+                "summary": "Endpoint for updating Todo",
+                "description": "Endpoint for updating Todo",
+                "operationId": "update",
+                "requestBody": {
+                    "description": "Endpoint for updating Todo",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "name",
+                                    "field",
+                                    "activity",
+                                    "state",
+                                    "dateline"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Cook Food"
+                                    },
+                                    "activity": {
+                                        "type": "string",
+                                        "example": "Ambitioconcilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum."
+                                    },
+                                    "state": {
+                                        "type": "string",
+                                        "example": "1 0r 0"
+                                    },
+                                    "dateline": {
+                                        "type": "string",
+                                        "example": "12/12/2022"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "401": {
+                        "description": "An unknown error has occurred !!! Please try again later",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "boolean",
+                                            "example": "true"
+                                        },
+                                        "status_code": {
+                                            "type": "string",
+                                            "example": "401"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Unauthorized"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Protected page, please log in"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "An unknown error has occurred !!! Please try again later",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "boolean",
+                                            "example": "true"
+                                        },
+                                        "status_code": {
+                                            "type": "string",
+                                            "example": "422"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Unprocessable Entity"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "An unknown error has occurred !!! Please try again later"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "Todo successfully created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "boolean",
+                                            "example": "false"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "success"
+                                        },
+                                        "status_code": {
+                                            "type": "integer",
+                                            "example": "200"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Todo successfully updated."
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": "2"
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "example": "Text here"
+                                                },
+                                                "activity": {
+                                                    "type": "string",
+                                                    "example": "description here"
+                                                },
+                                                "dateline": {
+                                                    "type": "string",
+                                                    "example": "2022-03-15T12:05:50.000000Z"
+                                                },
+                                                "updated at": {
+                                                    "type": "string",
+                                                    "example": "2022-03-15T12:05:50.000000Z"
+                                                },
+                                                "created at": {
+                                                    "type": "string",
+                                                    "example": "2022-03-15T12:05:50.000000Z"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/delete/id": {
+            "delete": {
+                "tags": [
+                    "Todo"
+                ],
+                "summary": "Endpoint for deleting new Todo",
+                "description": "Endpoint for deleting new Todo",
+                "operationId": "delete",
+                "responses": {
+                    "401": {
+                        "description": "An unknown error has occurred !!! Please try again later",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "boolean",
+                                            "example": "true"
+                                        },
+                                        "status_code": {
+                                            "type": "string",
+                                            "example": "401"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Unauthorized"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Protected page, please log in"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "An unknown error has occurred !!! Please try again later",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "boolean",
+                                            "example": "true"
+                                        },
+                                        "status_code": {
+                                            "type": "string",
+                                            "example": "422"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Unprocessable Entity"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "An unknown error has occurred !!! Please try again later"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "Todo successfully deleted",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "boolean",
+                                            "example": "false"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "success"
+                                        },
+                                        "status_code": {
+                                            "type": "integer",
+                                            "example": "200"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Todo successfully updated."
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": "2"
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "example": "Text here"
+                                                },
+                                                "activity": {
+                                                    "type": "string",
+                                                    "example": "description here"
+                                                },
+                                                "dateline": {
+                                                    "type": "string",
+                                                    "example": "2022-03-15T12:05:50.000000Z"
+                                                },
+                                                "updated at": {
+                                                    "type": "string",
+                                                    "example": "2022-03-15T12:05:50.000000Z"
+                                                },
+                                                "created at": {
+                                                    "type": "string",
+                                                    "example": "2022-03-15T12:05:50.000000Z"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}

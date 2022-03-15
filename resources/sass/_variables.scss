@@ -1,0 +1,26 @@
+// Body
+$body-bg: #f8fafc;
+
+// Typography
+$font-family-sans-serif: 'Nunito', sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+.icon{
+    // transform:scale(0.5);
+    height: 25px;
+    // margin:0 20px;
+}
+
+.w-10{
+    width:10%;
+}
+
+.h-10{
+    height: 10%;
+}
+
+.DeleteBtn{
+    cursor: pointer;
+    border: none;
+}
