@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react'
-import api from './api';
 import { useState } from 'react'
-// import { Link } from 'react-router-dom'
 const axios = window.axios;
 const BaseUrl = 'http://localhost:8000/api';
 
@@ -14,7 +12,7 @@ const Table = () => {
         axios.get(`${BaseUrl}/index`).then((response) => {
             settodos(response.data['data'])
         })
-    }, [])
+    }, [todos])
 
     const setDelete = (e, id) => {
         e.preventDefault();
@@ -29,10 +27,6 @@ const Table = () => {
 
     }
     const setDone = (e, id) => {
-        e.preventDefault();
-        console.log('====================================');
-        console.log(id);
-        console.log('====================================');
         axios.post(`http://localhost:8000/api/done/${id}`)
             .then(
                 window.location.reload(),
@@ -48,7 +42,7 @@ const Table = () => {
     const renderTodos = () => {
         if (!todos) {
             return (
-                <tr>There is no Todo</tr>
+                <tr>No Todos Found!</tr>
             )
         }
         else {
@@ -56,7 +50,7 @@ const Table = () => {
             (<tr className="mt-5" style={{ marginTop: "10px" }} key={index} >
                 <th scope="row">{index + 1}</th>
                 <td>{todo.name}</td>
-                <td>{todo.dateline}</td>
+                <td>{Date(todo.dateline)}</td>
                 <td className={todo.state == 1 ? "py-2 rounded bg-success text-white " : "rounded bg-warning"}>{todo.state == 1 ? "Done" : "Not Done"}</td>
                 <td>
                     <div className="d-flex">

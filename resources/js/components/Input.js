@@ -28,8 +28,6 @@ const Input = () => {
         axios.post('http://localhost:8000/api/store', (todo))
             .then(
                 window.location.reload(),
-                // response => alert(JSON.stringify(response.data))
-
             )
             .catch(error => {
                 console.log("ERROR:: ", error.response.data);
